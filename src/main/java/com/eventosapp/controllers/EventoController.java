@@ -36,6 +36,7 @@ public class EventoController {
         Evento evento = er.findByCodigo(codigo);
         ModelAndView mv = new ModelAndView("detalhesEvento");
         mv.addObject("evento", evento);
+        System.out.println("evento" + evento);
         return mv;
     }
 
