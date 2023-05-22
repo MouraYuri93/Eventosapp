@@ -3,6 +3,7 @@ package com.eventosapp.models;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 public class Evento implements Serializable {
@@ -12,11 +13,13 @@ public class Evento implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long codigo;
-
     private String nome;
     private String local;
     private String data;
     private String horario;
+
+    @OneToMany
+    private List<Convidado> convidados;
 
     public long getCodigo() {
         return codigo;
