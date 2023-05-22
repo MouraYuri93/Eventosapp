@@ -3,33 +3,36 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <title>EventosApp</title>
-    <!--Import Google Icon Font-->
+    <!-- Importação da Fonte de Ícones do Google -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <!--Import materialize.css-->
+    <!-- Importação do arquivo CSS do Materialize -->
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
-
-    <!--Let browser know website is optimized for mobile-->
+    <!-- Informa ao navegador que o site é otimizado para dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Importação do arquivo CSS personalizado -->
     <link rel="stylesheet" href="style/styleCss.css"/>
 </head>
 <body>
 
 <header>
+    <!-- Barra de navegação -->
     <nav class="menu">
         <div class="nav-wrapper">
             <a href="#" class="brand-logo">Cadastro de Eventos:</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de Eventos</a></li>
+                <li>
+                    <!-- Link para a lista de eventos -->
+                    <a href="/eventos" class="waves-effect waves-light btn">
+                        <i class="material-icons left">format_list_bulleted</i>Lista de Eventos</a>
+                </li>
             </ul>
         </div>
     </nav>
-
 </header>
-
-
+<!-- Inclusão da mensagem de validação -->
 <th:block th:include="mensagemValidacao"></th:block>
+<!-- Formulário para cadastrar um evento -->
 <div class="container formEvento">
-
     <form class="container" method="post">
         Nome: <input type="text" value="" name="nome"/>
         <div class="row">
@@ -44,12 +47,10 @@
             </div>
         </div>
         <button class="waves-effect waves-light btn" type="submit">Salvar</button>
-
     </form>
 </div>
+<!-- Importação do jQuery e do arquivo JavaScript do Materialize -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
-
-
 </html>
