@@ -3,16 +3,18 @@ package com.eventosapp.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Convidado {
 
     @Id
+    @NotEmpty
     private String rg;
+    @NotEmpty
     private String nomeConvidado;
     @ManyToOne
     private Evento evento;
-
 
     public String getRg() {
         return rg;
