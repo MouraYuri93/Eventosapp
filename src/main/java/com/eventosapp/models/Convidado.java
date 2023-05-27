@@ -11,11 +11,14 @@ public class Convidado {
     @Id
     @NotEmpty
     private String rg;
+
     @NotEmpty
     private String nomeConvidado;
+
     @ManyToOne
     private Evento evento;
 
+    // Getter e Setter para o atributo "rg"
     public String getRg() {
         return rg;
     }
@@ -24,6 +27,7 @@ public class Convidado {
         this.rg = rg;
     }
 
+    // Getter e Setter para o atributo "nomeConvidado"
     public String getNomeConvidado() {
         return nomeConvidado;
     }
@@ -32,6 +36,7 @@ public class Convidado {
         this.nomeConvidado = nomeConvidado;
     }
 
+    // Getter e Setter para o atributo "evento"
     public Evento getEvento() {
         return evento;
     }
@@ -40,3 +45,4 @@ public class Convidado {
         this.evento = evento;
     }
 }
+

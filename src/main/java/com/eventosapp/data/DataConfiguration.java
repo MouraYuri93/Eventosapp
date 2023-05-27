@@ -12,6 +12,7 @@ import javax.sql.DataSource;
 @Configuration
 public class DataConfiguration {
 
+    // Configuração do DataSource para conexão com o banco de dados
     @Bean
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -22,6 +23,7 @@ public class DataConfiguration {
         return dataSource;
     }
 
+    // Configuração do JpaVendorAdapter para o provedor JPA (Hibernate)
     @Bean
     public JpaVendorAdapter jpaVendorAdapter(){
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
@@ -32,6 +34,4 @@ public class DataConfiguration {
         adapter.setPrepareConnection(true);
         return adapter;
     }
-
-
 }

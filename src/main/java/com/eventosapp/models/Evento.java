@@ -7,24 +7,28 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Evento implements Serializable {
-
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long codigo;
+
     @NotEmpty
     private String nome;
+
     @NotEmpty
     private String local;
+
     @NotEmpty
     private String data;
+
     @NotEmpty
     private String horario;
 
     @OneToMany
     private List<Convidado> convidados;
 
+    // Getter e Setter para o atributo "codigo"
     public long getCodigo() {
         return codigo;
     }
@@ -33,6 +37,7 @@ public class Evento implements Serializable {
         this.codigo = codigo;
     }
 
+    // Getter e Setter para o atributo "nome"
     public String getNome() {
         return nome;
     }
@@ -41,6 +46,7 @@ public class Evento implements Serializable {
         this.nome = nome;
     }
 
+    // Getter e Setter para o atributo "local"
     public String getLocal() {
         return local;
     }
@@ -49,6 +55,7 @@ public class Evento implements Serializable {
         this.local = local;
     }
 
+    // Getter e Setter para o atributo "data"
     public String getData() {
         return data;
     }
@@ -57,6 +64,7 @@ public class Evento implements Serializable {
         this.data = data;
     }
 
+    // Getter e Setter para o atributo "horario"
     public String getHorario() {
         return horario;
     }

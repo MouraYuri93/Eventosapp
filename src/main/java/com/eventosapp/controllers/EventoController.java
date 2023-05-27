@@ -24,11 +24,13 @@ public class EventoController {
     @Autowired
     private ConvidadoRepository cr;
 
+    // Método para exibir o formulário de cadastro de evento
     @RequestMapping(value="/cadastrarEvento", method=RequestMethod.GET)
     public String form(){
         return "evento/formEvento";
     }
 
+    // Método para lidar com o envio do formulário de cadastro de evento
     @RequestMapping(value="/cadastrarEvento", method=RequestMethod.POST)
     public String form(@Valid Evento evento, BindingResult result, RedirectAttributes attributes){
         if(result.hasErrors()){
@@ -41,6 +43,7 @@ public class EventoController {
         return "redirect:/cadastrarEvento";
     }
 
+    // Método para exibir a lista de eventos
     @RequestMapping("/eventos")
     public ModelAndView listaEventos(){
         ModelAndView mv = new ModelAndView("listaEventos");
@@ -49,6 +52,7 @@ public class EventoController {
         return mv;
     }
 
+    // Método para exibir os detalhes de um evento específico
     @RequestMapping(value="/{codigo}", method=RequestMethod.GET)
     public ModelAndView detalhesEvento(@PathVariable("codigo") long codigo){
         Evento evento = er.findByCodigo(codigo);
@@ -61,6 +65,7 @@ public class EventoController {
         return mv;
     }
 
+    // Método para deletar um evento específico
     @RequestMapping("/deletarEvento")
     public String deletarEvento(long codigo){
         Evento evento = er.findByCodigo(codigo);
@@ -68,7 +73,7 @@ public class EventoController {
         return "redirect:/eventos";
     }
 
-
+    // Método para adicionar um convidado a um evento específico
     @RequestMapping(value="/{codigo}", method=RequestMethod.POST)
     public String detalhesEventoPost(@PathVariable("codigo") long codigo, @Valid Convidado convidado,  BindingResult result, RedirectAttributes attributes){
         if(result.hasErrors()){
@@ -82,6 +87,7 @@ public class EventoController {
         return "redirect:/{codigo}";
     }
 
+    // Método para deletar um convidado de um evento específico
     @RequestMapping("/deletarConvidado")
     public String deletarConvidado(String rg){
         Convidado convidado = cr.findByRg(rg);
@@ -93,3 +99,4 @@ public class EventoController {
         return "redirect:/" + codigo;
     }
 }
+
