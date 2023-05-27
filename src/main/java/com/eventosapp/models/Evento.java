@@ -12,19 +12,14 @@ public class Evento implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long codigo;
-
     @NotEmpty
     private String nome;
-
     @NotEmpty
     private String local;
-
     @NotEmpty
     private String data;
-
     @NotEmpty
     private String horario;
-
     @OneToMany
     private List<Convidado> convidados;
 
