@@ -41,7 +41,7 @@
 <div class="container formConvidado">
     <form method="post" th:object="${convidado}">
         Nome: <input type="text" value="" name="nomeConvidado" placeholder="Nome Completo"/>
-        Rg: <input type="text" value="" name="rg" placeholder="AA-00.000.000" class="validate"/>
+        CPF: <input type="text" value="" name="cpf" placeholder="000.000.000-00" class="validate"/>
         <button class="waves-effect waves-light btn" type="submit">Adicionar</button>
     </form>
 </div>
@@ -51,7 +51,7 @@
     <thead>
     <tr>
         <th>Nome Convidado</th>
-        <th>RG</th>
+        <th>CPF</th>
         <th>Deletar</th>
     </tr>
     </thead>
@@ -59,8 +59,8 @@
     <!-- Loop para exibir cada convidado na tabela -->
     <tr th:each="convidado : ${convidados}">
         <td><span th:text="${convidado.nomeConvidado}"></span></td>
-        <td><span th:text="${convidado.rg}"></span></td>
-        <td><a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.rg)).build()}"><i class="material-icons left">delete</i></a></td>
+        <td><span th:text="${convidado.cpf}"></span></td>
+        <td><a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.cpf)).build()}"><i class="material-icons left">delete</i></a></td>
     </tr>
     </tbody>
 </table>

@@ -10,7 +10,7 @@ public class Convidado {
 
     @Id
     @NotEmpty
-    private String rg;
+    private String cpf;
 
     @NotEmpty
     private String nomeConvidado;
@@ -19,12 +19,12 @@ public class Convidado {
     private Evento evento;
 
     // Getter e Setter para o atributo "rg"
-    public String getRg() {
-        return rg;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setRg(String rg) {
-        this.rg = rg;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     // Getter e Setter para o atributo "nomeConvidado"

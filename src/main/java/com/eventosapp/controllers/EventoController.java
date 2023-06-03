@@ -89,8 +89,8 @@ public class EventoController {
 
     // Método para deletar um convidado de um evento específico
     @RequestMapping("/deletarConvidado")
-    public String deletarConvidado(String rg){
-        Convidado convidado = cr.findByRg(rg);
+    public String deletarConvidado(String cpf){
+        Convidado convidado = cr.findByCpf(cpf);
         cr.delete(convidado);
 
         Evento evento = convidado.getEvento();
