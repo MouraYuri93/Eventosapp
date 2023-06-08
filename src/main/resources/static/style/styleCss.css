@@ -3,6 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: ;
 }
 
 .container {
@@ -27,6 +28,24 @@ body {
 }
 
 /* Estilos para os detalhes do evento */
+.listaEventos {
+    margin-top: 100px; /* Ajuste a margem superior conforme necessário */
+}
+
+/* Estilos para o formulário de adicionar evento */
+.formEvento {
+  margin-top: 200px; /* Ajuste a margem superior conforme necessário */
+  width: 100%;
+  background-color: #f4f4f4;
+  padding: 10px;
+}
+
+.formEvento input[type="text"],
+.formEvento button {
+  margin-top: 100px;
+}
+
+/* Estilos para os detalhes do evento */
 .detalhesEvento {
   margin-top: 80px; /* Ajuste a margem superior conforme necessário */
 }
@@ -42,8 +61,7 @@ body {
 }
 
 /* Estilos para o formulário de adicionar convidado */
-.formConvidado,
-.formEvento {
+.formConvidado {
   margin-top: 20px; /* Ajuste a margem superior conforme necessário */
 }
 
