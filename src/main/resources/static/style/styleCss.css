@@ -14,33 +14,21 @@ body {
 
 /* Estilos para o menu de navegação */
 .menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: #2F4F4F;
+  z-index: 999;
+  transition: background-color 0.3s ease;
 }
 
-.menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #2F4F4F;
-}
-
-.menu li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.menu li:last-child {
-  margin-right: 0;
-}
-
-.menu li a:hover {
-  background-color: #333;
-  color: #fff;
+.menu.scrolled {
+  background-color: #000;
 }
 
 /* Estilos para os detalhes do evento */
 .detalhesEvento {
-  margin-top: 20px;
+  margin-top: 80px; /* Ajuste a margem superior conforme necessário */
 }
 
 .detalhesEvento h5 {
@@ -54,12 +42,15 @@ body {
 }
 
 /* Estilos para o formulário de adicionar convidado */
-.formConvidado {
-  margin-top: 20px;
+.formConvidado,
+.formEvento {
+  margin-top: 20px; /* Ajuste a margem superior conforme necessário */
 }
 
 .formConvidado input[type="text"],
-.formConvidado button {
+.formConvidado button,
+.formEvento input[type="text"],
+.formEvento button {
   margin-top: 10px;
 }
 
