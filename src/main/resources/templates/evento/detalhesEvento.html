@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="style/styleCss.css"/>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 </head>
 <body>
 
@@ -63,13 +62,12 @@
     <tr th:each="convidado : ${convidados}">
         <td><span th:text="${convidado.nomeConvidado}"></span></td>
         <td><span th:text="${convidado.cpf}"></span></td>
-        <td><a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.cpf)).build()}">
-            <i class="fas fa-sharp fa-solid fa-trash"></i></a></td>
+        <td><a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.cpf)).build()}"><i class="material-icons left">delete</i></a></td>
     </tr>
     </tbody>
 </table>
 
-<!-- Scripts JavaScript -->
+<!-- Importação do jQuery e do arquivo JavaScript do Materialize -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 
