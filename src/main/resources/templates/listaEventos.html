@@ -11,6 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- Importação do arquivo CSS personalizado -->
     <link rel="stylesheet" href="style/styleCss.css"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 <body>
 <header>
@@ -54,7 +57,7 @@
             <!-- Botão para deletar o evento -->
             <a class="waves-effect waves-light btn-small"
                th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}">
-                <i class="material-icons left">delete</i>
+                <i class="fas fa-sharp fa-solid fa-trash"></i>
             </a>
         </td>
     </tr>
