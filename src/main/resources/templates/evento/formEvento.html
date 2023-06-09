@@ -34,22 +34,29 @@
 <!-- Inclusão da mensagem de validação -->
 <th:block th:include="mensagemValidacao"></th:block>
 <!-- Formulário para cadastrar um evento -->
-<div class="container formEvento">
+<div class="formEvento">
     <form class="container" method="post">
-        Nome: <input type="text" value="" name="nome"/>
-        <div class="row">
-            <div class="input-field col s6">
-                Local: <input type="text" value="" name="local"/>
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="local">Local:</label>
+            <input type="text" id="local" name="local" class="form-control" required>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6">
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" class="form-control" required>
             </div>
-            <div class="input-field col s3">
-                Data: <input type="date" value="" name="data"/>
-            </div>
-            <div class="input-field col s3">
-                Horario: <input type="time" value="" name="horario"/>
+            <div class="col-md-6">
+                <label for="horario">Horário:</label>
+                <input type="time" id="horario" name="horario" class="form-control" required>
             </div>
         </div>
-        <button class="waves-effect waves-light btn" type="submit">Salvar</button>
+        <button class="btn btn-primary" type="submit">Salvar</button>
     </form>
+</div>
 </div>
 <!-- Importação do jQuery e do arquivo JavaScript do Materialize -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

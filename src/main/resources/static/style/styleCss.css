@@ -61,12 +61,15 @@ tr:hover:nth-child(1n + 2) {
 
 /* Estilos para os detalhes do evento */
 .listaEventos {
-    margin-top: 100px; /* Ajuste a margem superior conforme necessário */
+  margin-top: 100px; /* Ajuste a margem superior conforme necessário */
+  width: 100%;
+  background-color: #f4f4f4;
+  padding: 10px;
 }
 
 /* Estilos para o formulário de adicionar evento */
 .formEvento {
-  margin-top: 200px; /* Ajuste a margem superior conforme necessário */
+  margin-top: 100px; /* Ajuste a margem superior conforme necessário */
   width: 100%;
   background-color: #f4f4f4;
   padding: 10px;
