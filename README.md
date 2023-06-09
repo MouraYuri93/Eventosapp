@@ -1,6 +1,4 @@
 
-Aqui está o arquivo README atualizado com as tecnologias utilizadas no projeto:
-
 # Eventosapp
 
 O Eventosapp é um projeto para gerenciar eventos online e presenciais. Ele permite que os usuários criem eventos, se inscrevam em eventos existentes e interajam com outros participantes.
