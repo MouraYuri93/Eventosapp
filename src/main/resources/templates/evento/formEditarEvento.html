@@ -2,19 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <title>EventosApp</title>
-    <!--Import Google Icon Font-->
+    <!-- Importação da Fonte de Ícones do Google -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <!--Import materialize.css-->
+    <!-- Importação do arquivo CSS do Materialize -->
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
-    <!--Let browser know website is optimized for mobile-->
+    <!-- Informa ao navegador que o site é otimizado para dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="style/styleCss.css"/>
+    <!-- Importação do arquivo CSS personalizado -->
+    <link rel="stylesheet" href="style/styles.css"/>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-<div class="container">
-    <h3>Editar Evento</h3>
+
+<header>
+    <nav class="menu">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Evento</a>
+        </div>
+    </nav>
+</header>
+
+<div class="formEditarEvento">
     <form th:action="@{/evento/editarEvento}" th:object="${evento}" method="post">
         <input type="hidden" th:field="*{codigo}" />
         <div class="input-field">
