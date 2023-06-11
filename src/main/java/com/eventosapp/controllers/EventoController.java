@@ -108,5 +108,27 @@ public class EventoController {
         String codigo = "" + codigoLong;
         return "redirect:/" + codigo;
     }
+
+    // Método para exibir o formulário de edição de evento
+    @RequestMapping(value="/evento/formEditarEvento/{codigo}", method=RequestMethod.GET)
+    public ModelAndView formEditarEvento(@PathVariable("codigo") long codigo){
+        Evento evento = er.findByCodigo(codigo);
+        ModelAndView mv = new ModelAndView("evento/formEditarEvento");
+        mv.addObject("evento", evento);
+        return mv;
+    }
+
+    // Método para lidar com o envio do formulário de edição de evento
+    @RequestMapping(value="/evento/editarEvento", method=RequestMethod.POST)
+    public String editarEvento(@Valid Evento evento, BindingResult result, RedirectAttributes attributes){
+        if(result.hasErrors()){
+            attributes.addFlashAttribute("mensagem", "Verifique os campos!");
+            return "redirect:/evento/formEditarEvento/" + evento.getCodigo();
+        }
+
+        er.save(evento);
+        attributes.addFlashAttribute("mensagem", "Evento editado com sucesso!");
+        return "redirect:/" + evento.getCodigo();
+    }
 }
 
