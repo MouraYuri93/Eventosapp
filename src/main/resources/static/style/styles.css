@@ -93,6 +93,19 @@ tr:hover:nth-child(1n + 2) {
   margin-top: 100px;
 }
 
+/* Estilos para o formulário de editar evento */
+.formEditarConvidado {
+  margin-top: 100px; /* Ajuste a margem superior conforme necessário */
+  width: 100%;
+  background-color: #f4f4f4;
+  padding: 10px
+}
+
+.formEditarConvidado input[type="text"],
+.formEditarConvidado button {
+  margin-top: 100px;
+}
+
 /* Estilos para os detalhes do evento */
 .detalhesEvento {
   margin-top: 80px; /* Ajuste a margem superior conforme necessário */
