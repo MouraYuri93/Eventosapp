@@ -7,10 +7,7 @@ import com.eventosapp.repository.EventoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -129,6 +126,30 @@ public class EventoController {
         er.save(evento);
         attributes.addFlashAttribute("mensagem", "Evento editado com sucesso!");
         return "redirect:/" + evento.getCodigo();
+    }
+
+    // Método para exibir o formulário de edição de convidado
+    @GetMapping("/formEditarConvidado/{codigo}/{cpf}")
+    public ModelAndView formEditarConvidado(@PathVariable("codigo") long codigo, @PathVariable("cpf") String cpf) {
+        Evento evento = er.findByCodigo(codigo);
+        Convidado convidado = cr.findByCpf(cpf);
+        ModelAndView mv = new ModelAndView("evento/formEditarConvidado");
+        mv.addObject("evento", evento);
+        mv.addObject("convidado", convidado);
+        return mv;
+    }
+
+    // Método para lidar com o envio do formulário de edição de convidado
+    @PostMapping("/editarConvidado")
+    public String editarConvidado(@Valid Convidado convidado, BindingResult result, RedirectAttributes attributes) {
+        if (result.hasErrors()) {
+            attributes.addFlashAttribute("mensagem", "Verifique os campos!");
+            return "redirect:/evento/formEditarConvidado/" + convidado.getEvento().getCodigo() + "/" + convidado.getCpf();
+        }
+
+        cr.save(convidado);
+        attributes.addFlashAttribute("mensagem", "Convidado editado com sucesso!");
+        return "redirect:/" + convidado.getEvento().getCodigo();
     }
 }
 
