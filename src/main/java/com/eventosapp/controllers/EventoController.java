@@ -76,14 +76,23 @@ public class EventoController {
     // Método para adicionar um convidado a um evento específico
     @RequestMapping(value="/{codigo}", method=RequestMethod.POST)
     public String detalhesEventoPost(@PathVariable("codigo") long codigo, @Valid Convidado convidado,  BindingResult result, RedirectAttributes attributes){
-        if(result.hasErrors()){
+        if (result.hasErrors()) {
             attributes.addFlashAttribute("mensagem", "Verifique os campos!");
             return "redirect:/{codigo}";
         }
         Evento evento = er.findByCodigo(codigo);
         convidado.setEvento(evento);
-        cr.save(convidado);
-        attributes.addFlashAttribute("mensagem", "Convidado adicionado com sucesso!");
+
+        Convidado convidadoExistente = cr.findByCpf(convidado.getCpf());
+        if (convidadoExistente != null) {
+            // O convidado já existe no evento
+            attributes.addFlashAttribute("mensagem", "Este convidado já está adicionado!");
+        } else {
+            // O convidado é novo, podemos salvá-lo
+            cr.save(convidado);
+            attributes.addFlashAttribute("mensagem", "Convidado adicionado com sucesso!");
+        }
+
         return "redirect:/{codigo}";
     }
 
