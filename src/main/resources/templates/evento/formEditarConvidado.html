@@ -13,25 +13,12 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-<header>
-    <nav class="menu">
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Evento</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de evento</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
 <body>
 
 <header>
     <nav class="menu">
         <div class="nav-wrapper">
             <a href="#" class="brand-logo">Evento</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de evento</a></li>
-            </ul>
         </div>
     </nav>
 </header>
@@ -40,12 +27,10 @@
     <h5>Editar Convidado</h5>
     <form method="post" th:object="${convidado}">
         <input type="hidden" th:field="*{cpf}" />
-
         <div class="input-field">
             <input type="text" th:field="*{nomeConvidado}" />
             <label for="nomeConvidado">Nome Completo</label>
         </div>
-
         <button class="waves-effect waves-light btn" type="submit">Salvar</button>
     </form>
 </div>
