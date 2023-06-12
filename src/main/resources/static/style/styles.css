@@ -72,7 +72,7 @@ tr:hover:nth-child(1n + 2) {
   text-decoration: none;
 }
 
-.listaEventos a:hover {
+.listaEventos #btn:hover {
     text-align: center;
     margin: 10px auto;
     max-width: 800px;
