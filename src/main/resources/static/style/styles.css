@@ -59,12 +59,29 @@ tr:hover:nth-child(1n + 2) {
   background-color: #000;
 }
 
-/* Estilos para os detalhes do evento */
+/* Estilos para as listas de eventos */
 .listaEventos {
   margin-top: 100px; /* Ajuste a margem superior conforme necessário */
   width: 100%;
   background-color: #f4f4f4;
   padding: 10px;
+}
+
+.listaEventos a {
+  color: #2F4F4F;
+  text-decoration: none;
+}
+
+.listaEventos a:hover {
+    text-align: center;
+    margin: 10px auto;
+    max-width: 800px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #2F4F4F;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilos para o formulário de adicionar evento */
@@ -77,32 +94,6 @@ tr:hover:nth-child(1n + 2) {
 
 .formEvento input[type="text"],
 .formEvento button {
-  margin-top: 100px;
-}
-
-/* Estilos para o formulário de editar evento */
-.formEditarEvento {
-  margin-top: 100px; /* Ajuste a margem superior conforme necessário */
-  width: 100%;
-  background-color: #f4f4f4;
-  padding: 10px
-}
-
-.formEditarEvento input[type="text"],
-.formEditarEvento button {
-  margin-top: 100px;
-}
-
-/* Estilos para o formulário de editar evento */
-.formEditarConvidado {
-  margin-top: 100px; /* Ajuste a margem superior conforme necessário */
-  width: 100%;
-  background-color: #f4f4f4;
-  padding: 10px
-}
-
-.formEditarConvidado input[type="text"],
-.formEditarConvidado button {
   margin-top: 100px;
 }
 
@@ -159,6 +150,46 @@ tr:hover:nth-child(1n + 2) {
 .tabelaConvidado td a:hover {
   color: #2F4F4F;
 }
+
+/* Estilos para o formulário de edição do evento */
+    .formEditarEvento {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .formEditarEvento .input-field {
+      margin-bottom: 20px;
+    }
+
+    .formEditarEvento label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .formEditarEvento input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .formEditarEvento button[type="submit"] {
+      background-color: #085F63;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .formEditarEvento button[type="submit"]:hover {
+      background-color: #2F4F4F;
+    }
 
 .flash-message {
   text-align: center;
