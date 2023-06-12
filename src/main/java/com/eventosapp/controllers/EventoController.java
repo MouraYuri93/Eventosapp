@@ -129,7 +129,7 @@ public class EventoController {
     }
 
     // Método para exibir o formulário de edição de convidado
-    @GetMapping("/formEditarConvidado/{codigo}/{cpf}")
+    @RequestMapping(value="/evento/formEditarConvidado/{codigo}/{cpf}", method=RequestMethod.GET)
     public ModelAndView formEditarConvidado(@PathVariable("codigo") long codigo, @PathVariable("cpf") String cpf) {
         Evento evento = er.findByCodigo(codigo);
         Convidado convidado = cr.findByCpf(cpf);
@@ -140,7 +140,7 @@ public class EventoController {
     }
 
     // Método para lidar com o envio do formulário de edição de convidado
-    @PostMapping("/editarConvidado")
+    @RequestMapping(value="/evento/editarConvidado", method=RequestMethod.POST)
     public String editarConvidado(@Valid Convidado convidado, BindingResult result, RedirectAttributes attributes) {
         if (result.hasErrors()) {
             attributes.addFlashAttribute("mensagem", "Verifique os campos!");
@@ -151,5 +151,6 @@ public class EventoController {
         attributes.addFlashAttribute("mensagem", "Convidado editado com sucesso!");
         return "redirect:/" + convidado.getEvento().getCodigo();
     }
+
 }
 
