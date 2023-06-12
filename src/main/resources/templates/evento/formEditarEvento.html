@@ -4,14 +4,104 @@
     <title>EventosApp</title>
     <!-- Importação da Fonte de Ícones do Google -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <!-- Importação do arquivo CSS do Materialize -->
-    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
     <!-- Informa ao navegador que o site é otimizado para dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!-- Importação do arquivo CSS personalizado -->
-    <link rel="stylesheet" href="style/styles.css"/>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+    /* Estilos globais */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #DCEBE6;
+    }
+
+    /* Estilos para o cabeçalho */
+    header {
+      background-color: #2F4F4F;
+      color: #fff;
+      padding: 10px;
+    }
+
+    .menu {
+      position: flex;
+      top: 10px;
+      padding: 10px
+      width: 100%;
+      background-color: #2F4F4F;
+    }
+
+    nav.menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav.menu .brand-logo {
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    /* Estilos para o formulário de edição do evento */
+    .formEditarEvento {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .formEditarEvento .input-field {
+      margin-bottom: 20px;
+    }
+
+    .formEditarEvento label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .formEditarEvento input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .formEditarEvento button[type="submit"] {
+      background-color: #085F63;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .formEditarEvento button[type="submit"]:hover {
+      background-color: #2F4F4F;
+    }
+
+    /* Estilos para a página inteira */
+    html,
+    body {
+      height: 100%;
+    }
+
+    /* Estilos para o conteúdo */
+    .content {
+      padding: 20px;
+    }
+
+    /* Estilos para a barra de navegação */
+    .nav-wrapper {
+      padding: 0 20px;
+    }
+
+    </style>
 </head>
 <body>
 
@@ -27,20 +117,20 @@
     <form th:action="@{/evento/editarEvento}" th:object="${evento}" method="post">
         <input type="hidden" th:field="*{codigo}" />
         <div class="input-field">
-            <input type="text" id="nome" th:field="*{nome}" />
             <label for="nome">Nome</label>
-        </div>
+            <input type="text" id="nome" th:field="*{nome}" />
+                    </div>
         <div class="input-field">
-            <input type="text" id="local" th:field="*{local}" />
             <label for="local">Local</label>
-        </div>
+            <input type="text" id="local" th:field="*{local}" />
+                    </div>
         <div class="input-field">
-            <input type="text" id="data" th:field="*{data}" />
             <label for="data">Data</label>
+            <input type="text" id="data" th:field="*{data}" />
         </div>
         <div class="input-field">
-            <input type="text" id="horario" th:field="*{horario}" />
             <label for="horario">Horário</label>
+            <input type="text" id="horario" th:field="*{horario}" />
         </div>
         <button type="submit" class="waves-effect waves-light btn">Atualizar</button>
     </form>
