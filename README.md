@@ -16,10 +16,12 @@ O Eventosapp é um projeto para gerenciar eventos online e presenciais. Ele perm
 ## Funcionalidades
 
 - Criar um novo evento, fornecendo detalhes como título, descrição, data, localização, etc.
+- Editar um evento.
 - Visualizar a lista de eventos existentes.
 - Inscrever-se em eventos específicos.
 - Visualizar os detalhes de um evento, incluindo a lista de participantes.
 - Interagir com outros participantes do evento através de comentários.
+- Atualizar dados dos participantes.
 
 ## Pré-requisitos
 
