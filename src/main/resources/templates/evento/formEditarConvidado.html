@@ -108,13 +108,14 @@
 <header>
     <nav class="menu">
         <div class="nav-wrapper">
-            <a href="/eventos" class="brand-logo">Lista de Evento</a>
+            <a href="/eventos" class="brand-logo">Editar Convidado</a>
         </div>
     </nav>
 </header>
 
 <div class="formEditarConvidado">
-    <form method="post" th:object="${convidado}">
+    <form th:action="@{/evento/editarConvidado}" th:object="${convidado}" method="post">
+
         <input type="hidden" th:field="*{evento.codigo}" />
         <div class="input-field">
             <label for="nome">Nome:</label>
@@ -122,7 +123,7 @@
         </div>
         <div class="input-field">
             <label for="cpf">CPF:</label>
-            <input type="text" th:field="*{cpf}" />
+            <input type="text" id="identification" th:field="*{cpf}" />
         </div>
         <button class="waves-effect waves-light btn" type="submit">Salvar</button>
     </form>
@@ -130,6 +131,21 @@
 
 <!-- Importação do jQuery e do arquivo JavaScript do Materialize -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+<script src="http://www.geradorcpf.com/scripts.js"></script>
+<script src="http://www.geradorcpf.com/jquery-1.2.6.pack.js"></script>
+<script src="http://www.geradorcpf.com/jquery.maskedinput-1.1.4.pack.js"></script>
+
+<script>
+  document.getElementById('identification').addEventListener('input', function(e) {
+    let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,3})(\d{0,2})/);
+    e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + (x[3] ? '.' : '') + x[3] + (x[4] ? '-' + x[4] : '');
+
+    console.log('Com formatação: ' + e.target.value);
+
+    // Caso queira pegar apenas os números use essa função para remover todos os caracteres menos os números em Javascript
+    let valor = e.target.value.replace(/[^0-9]/g, '');
+    console.log('Sem formatação: ' + valor);
+  });
+</script>
 </body>
 </html>

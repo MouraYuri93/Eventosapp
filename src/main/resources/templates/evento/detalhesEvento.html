@@ -45,7 +45,7 @@
 <div class="container formConvidado">
     <form method="post" th:object="${convidado}">
         Nome: <input type="text" value="" name="nomeConvidado" placeholder="Nome Completo"/>
-        CPF: <input type="text" value="" name="cpf" placeholder="000.000.000-00" class="validate"/>
+        CPF: <input type="text" value="" name="cpf" placeholder="000.000.000-00" id="identification" class="validate"/>
         <button class="waves-effect waves-light btn" type="submit">Adicionar</button>
     </form>
 </div>
@@ -79,7 +79,7 @@
 
 <!-- Importação do jQuery e do arquivo JavaScript do Materialize -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="materialize/js/script.js"></script>
 
 </body>
 </html>
