@@ -17,9 +17,9 @@ public class DataConfiguration {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/eventosapp?useTimezone=true&serverTimezone=UTC");
-        dataSource.setUsername("root");
-        dataSource.setPassword("Root1@");
+        dataSource.setUrl("jdbc:mysql://localhost:3307/eventosapp?useTimezone=true&serverTimezone=UTC");
+        dataSource.setUsername("");
+        dataSource.setPassword("@");
         return dataSource;
     }
 
@@ -30,7 +30,7 @@ public class DataConfiguration {
         adapter.setDatabase(Database.MYSQL);
         adapter.setShowSql(true);
         adapter.setGenerateDdl(true);
-        adapter.setDatabasePlatform("org.hibernate.dialect.MySQL8Dialect");
+        adapter.setDatabasePlatform("org.hibernate.dialect.MySQLDialect"); // Substituição para o MySQLDialect
         adapter.setPrepareConnection(true);
         return adapter;
     }
